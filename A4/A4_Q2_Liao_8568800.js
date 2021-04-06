@@ -71,8 +71,8 @@ function cellClickListener(num) {
 					)
 				) {
 					// if play again
-					console.log("Yes! Play again!")
-					location.reload();	// I think applying Math.random here is redundant
+					console.log("Yes! Play again!");
+					location.reload(); // I think applying Math.random here is redundant
 				}
 			}, 600);
 		}
@@ -114,7 +114,11 @@ function checkAdjCells(targetID, num) {
 	const bottomCellID = targetID + num;
 	const leftCellID = targetID - 1;
 	const rightCellID = targetID + 1;
-	const cells = [topCellID, bottomCellID, leftCellID, rightCellID];
+	const cells = [topCellID, rightCellID, bottomCellID, leftCellID];
+	// special case for the edge cells:
+	if (cells[1] % num == 0) cells[1] = -1;
+	else if (cells[3] % num == num - 1) cells[3] = -1;
+	
 	for (let i = 0; i < cells.length; i++) {
 		const cell = document.getElementById(`cell-${cells[i]}`);
 		if (cell != null && cell.textContent == "") {
