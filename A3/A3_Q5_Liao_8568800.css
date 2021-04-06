@@ -1,0 +1,38 @@
+html,
+body {
+	letter-spacing: 0.5px;
+}
+
+input[type="button"] {
+	outline: 0;
+	color: #cdcdcd;
+	background-color: #333333;
+	letter-spacing: inherit;
+	font-size: 1rem;
+	font-weight: 600;
+	padding: 10px 1.5rem;
+	border-radius: 1rem;
+	border: 1px solid #6c6c6c;
+	transition: all 0.3s ease-in-out;
+}
+input[type="button"]:hover {
+	color: #fff;
+	background-color: #e81123;
+}
+input[type="button"]:disabled {
+	color: #c0c0c0;
+	border: 1px solid #c4c4c4;
+	background-color: #e4e6e8;
+}
+
+#info {
+	text-align: left;
+}
+
+.box-center {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+}

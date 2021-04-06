@@ -1,0 +1,28 @@
+html, body {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+a {
+    display: block;
+    color: inherit;
+    padding: 10px 30px;
+    text-decoration: none;
+}
+
+.nav-btn {
+    width: max-content;
+    cursor: pointer;
+    user-select: none;
+    text-align: center;
+    color: #494c4e;
+    background-color: #e3e9f1;
+    border: 1px solid #cdd5dc;
+    border-radius: 1rem;
+}
+.nav-btn:hover {
+    color: white;
+    background-color: #6e7376;
+}

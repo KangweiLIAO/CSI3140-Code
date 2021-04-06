@@ -1,0 +1,50 @@
+<!-- Question 4 -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title> Feedback </title>
+    </head>
+    <style>
+        div {
+            margin-left:auto; 
+            margin-right:auto;
+            max-width: max-content;
+        }
+    </style>
+    <body style="text-align:center;">
+        <h3> Feedback Form </h3>
+        <form name="feedback" action="http://www.deitel.com" method="post">
+            <div style="text-align: left;">
+                <input type="text" placeholder="Username">
+                <input type="email" placeholder="Email">
+            </div>
+            <div>
+                <p> Check the following boxes if you like it: </p>
+                <div style="text-align:left;">
+                    <input type="checkbox" name="like" value="campus"> Campus <br>
+                    <input type="checkbox" name="like" value="students"> Students <br>
+                    <input type="checkbox" name="like" value="location"> Location <br>
+                    <input type="checkbox" name="like" value="atmosphere"> Atmosphere <br>
+                    <input type="checkbox" name="like" value="dormrooms"> Dorm rooms <br>
+                    <input type="checkbox" name="like" value="sports"> Sports <br> <br>
+                </div>
+            </div>
+
+            <div>
+                <p> How you became interested in our university? </p>
+                <div style="text-align:left;">
+                    <input type="radio" name="interest" value="friends"> Friends <br>
+                    <input type="radio" name="interest" value="television"> Television <br>
+                    <input type="radio" name="interest" value="internet"> Internet <br>
+                    <input type="radio" name="interest" value="other"> Other <br>
+                </div>
+            </div>
+            <br>
+            <textarea name="comment" cols="50" rows="10" placeholder="Enter your comments here..."></textarea>
+            <br> <br>
+            <input type="submit">
+            <input type="reset">
+        </form>
+    </body>
+</html>

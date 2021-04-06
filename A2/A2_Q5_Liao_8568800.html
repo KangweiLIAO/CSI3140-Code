@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Question 5</title>
+        <style>
+            html,
+            body {
+                height: 100%;
+                display: flex;
+                text-align: center;
+                align-items: center;
+                flex-direction: column;
+                justify-content: center;
+            }
+            .output {
+                padding: 10px;
+                border: 1px solid black;
+                border-radius: 1rem;
+            }
+        </style>
+    </head>
+    <body>
+        <span>
+            <input id="first" type="number" placeholder="First digit" />
+            is a multiple of
+            <input id="second" type="number" placeholder="Second digit" />
+            ?
+        </span>
+        <p class="output" id="output">Please fill in the inputs above</p>
+        <script>
+            var firstFilled = false;    // first digit given?
+            var secondFilled = false;   // second digit given?
+            const firstField = document.getElementById("first");
+            const secondField = document.getElementById("second");
+            const outputField = document.getElementById("output");
+            firstField.addEventListener("input", (e) => {
+                if (e.target.value == "") firstFilled = false;
+                else firstFilled = true;
+                resultHandler();
+            });
+            secondField.addEventListener("input", (e) => {
+                if (e.target.value == "") secondFilled = false;
+                else secondFilled = true;
+                resultHandler();
+            });
+            function resultHandler() {  // Display result when 2 digits was given
+                if (firstFilled && secondFilled) {
+                    outputField.textContent =
+                        parseInt(firstField.value) % parseInt(secondField.value) ==
+                        0;
+                } else 
+                    outputField.textContent = "Please fill in the inputs above";
+            }
+        </script>
+    </body>
+</html>

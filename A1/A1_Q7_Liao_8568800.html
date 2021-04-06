@@ -1,0 +1,33 @@
+<!-- Question 6 -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title> A1 - Question 7 </title>
+    </head>
+    <body style="text-align:center; padding-top:50px;">
+        <h3>Registration</h3>
+        <form  autocomplete="on">
+            <input type="text" placeholder="First Name">
+            <input type="text" placeholder="Last Name">
+            <input type="email" placeholder="Email">
+            <br> <br>
+            <details style="max-width:max-content; margin-left:auto; margin-right:auto;">
+                <summary>Survey Questions</summary>
+                <p>Please enter your year in university:</p>
+                <input type="text" list="years" placeholder="Year in university">
+                <datalist id="years">
+                    <option value="Not yet in university">
+                    <option value="Freshman">
+                    <option value="Sophomore">
+                    <option value="Junior">
+                    <option value="Senior">
+                    <option value="Graduate">
+                </datalist>
+            </details>
+            <br>
+            <input type="submit">
+            <input type="reset">
+        </form>
+    </body>
+</html>

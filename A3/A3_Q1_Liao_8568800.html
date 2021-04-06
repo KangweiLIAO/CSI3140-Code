@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Question 1</title>
+		<style>
+			html,
+			body {
+				height: 100%;
+			}
+			button {
+				margin: 1rem;
+				padding: 10px;
+			}
+			.box-center {
+				display: flex;
+				text-align: center;
+				align-items: center;
+				justify-content: center;
+				height: 100%;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box-center">
+			<button type="button" onclick="promptInput(1)">
+				Covert &#8457; to &#8451;
+			</button>
+			<button type="button" onclick="promptInput(2)">
+				Covert &#8451; to &#8457;
+			</button>
+		</div>
+	</body>
+	<script>
+		function promptInput(state) {
+			var input =
+				state == 1
+					? window.prompt(
+							"Please enter the fahrenheit temperature that you want to convert:"
+					  )
+					: window.prompt(
+							"Please enter the celsius temperature that you want to convert:"
+					  );
+			input = parseFloat(input.trim());
+			if (input == null || isNaN(input) || input === "")
+				alert("Please enter a numerical value!");
+			else {
+				var result = state == 1 ? celsius(input) : fahrenheit(input);
+				alert("The result is " + result.toFixed(2));
+			}
+		}
+		function celsius(fahrenheit) {
+			return (5 / 9) * (fahrenheit - 32);
+		}
+		function fahrenheit(celsius) {
+			return (9 / 5) * celsius + 32;
+		}
+	</script>
+</html>

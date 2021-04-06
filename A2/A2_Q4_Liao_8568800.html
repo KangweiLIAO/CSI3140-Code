@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Question 4</title>
+    <style>
+        html,body {
+            height: 100%;
+        }
+    
+        .box {
+            border-radius: 1rem;
+            color: white;
+            display: flex;
+            font-size: 1.5rem;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            width: 10%;
+            height: 10%;
+            background-color: black;
+            transition: all .3s ease-in-out;
+            animation: moveSquare 5s infinite;
+        }
+        .box:hover {transform: scale(0);}
+    
+        @keyframes moveSquare {
+            0%  {top: 0;  left: 0;}
+            25% {top: 85%;  left: 0;}
+            50% {top: 85%;  left: 90%;}
+            75% {top: 0;  left: 90%;}
+            100% {top: 0;  left: 0;}
+        }
+        @-webkit-keyframes moveSquare {
+            0%  {top: 0;  left: 0;}
+            25% {top: 85%;  left: 0;}
+            50% {top: 85%;  left: 90%;}
+            75% {top: 0;  left: 90%;}
+            100% {top: 0;  left: 0;}
+        }
+        @-moz-keyframes moveSquare {
+            0%  {top: 0;  left: 0;}
+            25% {top: 85%;  left: 0;}
+            50% {top: 85%;  left: 90%;}
+            75% {top: 0;  left: 90%;}
+            100% {top: 0;  left: 0;}
+        }
+    </style>
+</head>
+<body>
+    <div class="box"> Catch Me </div>
+</body>
+</html>

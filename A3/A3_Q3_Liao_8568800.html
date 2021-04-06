@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Question 3</title>
+		<style>
+			html,
+			body {
+				height: 100%;
+			}
+			input::-webkit-outer-spin-button,
+			input::-webkit-inner-spin-button {
+				-webkit-appearance: none;
+				margin: 0;
+			}
+			input[type="number"] {
+				-moz-appearance: textfield;
+			}
+			.box-center {
+				display: flex;
+				flex-direction: column;
+				text-align: center;
+				align-items: center;
+				justify-content: center;
+				height: 100%;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box-center">
+			<p>Please guess an integer from 1 to 1000:</p>
+			<div>
+				<input id="input" type="number" style="margin-right: 1rem" />
+				<button type="submit" onclick="checkInput()">Check</button>
+			</div>
+			<p id="info"></p>
+		</div>
+	</body>
+	<script>
+		var count = 0;
+		var randInt = Math.floor(Math.random() * 1000) + 1;
+		console.log(randInt);
+		function checkInput(state) {
+			var infoDiv = document.getElementById("info");
+			var inputBox = document.getElementById("input");
+			var input = parseInt(inputBox.value);
+			infoDiv.style.color = "red";
+			inputBox.value = input;
+			if (input == null || isNaN(input) || input === "")
+				infoDiv.innerHTML = "Please enter an integer!";
+			else {
+				if (input < 1 || input > 1000)
+					infoDiv.innerHTML =
+						"Wrong input! You should enter a number between 1 and 1000.";
+				else {
+					count++;
+					if (input > randInt) infoDiv.innerHTML = "Too high. Try again.";
+					else if (input < randInt) infoDiv.innerHTML = "Too low. Try again.";
+					else {
+						infoDiv.innerHTML =
+							count < 10
+								? "Ahah! You know the secret! Either you know the secret or you got lucky!"
+								: "You should be able to do better!";
+						infoDiv.style.color = "green";
+					}
+				}
+			}
+		}
+	</script>
+</html>

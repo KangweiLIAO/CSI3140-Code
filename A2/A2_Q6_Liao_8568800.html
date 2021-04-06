@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Question 6</title>
+        <style>
+            html,
+            body {
+                height: 100%;
+                display: flex;
+                text-align: center;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+            }
+            .output {
+                padding: 10px;
+                border: 1px solid black;
+                border-radius: 1rem;
+            }
+        </style>
+    </head>
+    <body>
+        <span>
+            <input
+                id="input"
+                type="number"
+                min="1"
+                placeholder="Input Digits"
+            />
+            is a palindrome?
+        </span>
+        <p class="output" id="output">Please fill in the input above</p>
+        <script>
+            var inputFilled = false;
+            const inputField = document.getElementById("input");
+            const outputField = document.getElementById("output");
+            inputField.addEventListener("input", (e) => {
+                const str = e.target.value.toString();
+                if (str.length > 5) {
+                    alert(
+                        "Your input is more than 5 integers! (Valid input: 1 to 5 integers)"
+                    );
+                    inputField.value = "";
+                } else if (str.charAt(0) == "0") {
+                    alert("Your first number should not be 0!");
+                    inputField.value = "";
+                } else if (str.length != "") {
+                    outputField.textContent = (
+                        str == str.split("").reverse().join("")
+                    ).toString();
+                } else {
+                    outputField.textContent = "Please fill in the input above";
+                }
+            });
+        </script>
+    </body>
+</html>

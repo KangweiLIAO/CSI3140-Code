@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Question 6</title>
+		<style>
+			html,
+			body {
+				height: 100%;
+			}
+			textarea {
+				width: 70%;
+				height: 30%;
+			}
+			form {
+				margin: 1rem;
+			}
+			.box-center {
+				display: flex;
+				flex-direction: column;
+				text-align: center;
+				align-items: center;
+				justify-content: center;
+				height: 100%;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="output" class="box-center">
+			<p style="margin-bottom: 0">
+				Please enter the English-language phrases that you want to encode in pig
+				Latin:
+			</p>
+			<form id="form">
+				<span> English words (split by space): </span>
+				<input id="input" type="text" size="49" />
+				<input type="button" onclick="encode()" value="Encode" />
+			</form>
+			<textarea id="record" rows="25" cols="89"></textarea>
+		</div>
+	</body>
+	<script src="A3_Q6_Liao_8568800.js"></script>
+</html>

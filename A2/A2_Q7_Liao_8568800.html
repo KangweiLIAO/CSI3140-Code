@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Question 7</title>
+		<style>
+			html,
+			body {
+				height: 100%;
+				display: flex;
+				text-align: center;
+				align-items: center;
+				justify-content: center;
+			}
+			table {
+				border: 1px solid #ddd;
+				border-radius: 0.5rem;
+			}
+			table th {
+				color: white;
+				background-color: #ee823a;
+			}
+			table th,
+			table td {
+				border-radius: 0.5rem;
+				border: 1px solid #ddd;
+				padding: 4px 1rem;
+			}
+			tr:hover {
+				background-color: #ddd;
+			}
+		</style>
+	</head>
+	<body>
+		<table id="table">
+			<tr>
+				<th>Product No.</th>
+				<th>Quantity Sold</th>
+				<th>Total Sales</th>
+			</tr>
+		</table>
+		<script>
+			var table = document.getElementById("table");
+			var products = [
+				{ pid: 1, quantity: 0, sales: 0 },
+				{ pid: 2, quantity: 0, sales: 0 },
+				{ pid: 3, quantity: 0, sales: 0 },
+				{ pid: 4, quantity: 0, sales: 0 },
+				{ pid: 5, quantity: 0, sales: 0 },
+			];
+
+			window.onload = () => {
+				alert("Press cancel to display the final result!");
+				do {
+					var read = prompt(
+						"Please enter your product number and its quantity (Split values by a space):",
+						"1 1"
+					); // prompt product number & quantity input
+					if (read != null) {
+						var pid = parseInt(read.split(" ")[0]);
+						var quantity = parseInt(read.split(" ")[1]);
+						console.log(quantity);
+						if (isNaN(quantity)) pid = -1;
+						else products[pid - 1].quantity = quantity;
+						switch (
+							parseInt(pid) // redundant?
+						) {
+							case 1:
+								products[0].sales = 2.98 * products[0].quantity;
+								break;
+							case 2:
+								products[1].sales = 4.5 * products[1].quantity;
+								break;
+							case 3:
+								products[2].sales = 9.98 * products[2].quantity;
+								break;
+							case 4:
+								products[3].sales = 4.49 * products[3].quantity;
+								break;
+							case 5:
+								products[4].sales = 6.87 * products[4].quantity;
+								break;
+							default:
+								alert(
+									"Invalid input! (Note: Product number is from 1 to 5, and split the value by exactly 1 space)"
+								);
+								console.log("Invalid pid" + pid);
+								break;
+						}
+					}
+				} while (read != null);
+				products.forEach((e) => {
+					var row = document.createElement("tr");
+					row.id = `product${e["pid"]}`;
+					row.innerHTML = `
+                    <td>${e["pid"]}</td>
+                    <td>${e["quantity"]}</td>
+                    <td>$${e["sales"].toFixed(2)}</td>
+                    `;
+					document.getElementById("table").appendChild(row);
+				});
+			};
+		</script>
+	</body>
+</html>
